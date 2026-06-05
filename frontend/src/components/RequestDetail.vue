@@ -121,6 +121,7 @@ async function copyBody() {
 <style scoped>
 .request-detail {
   height: 100%;
+  min-height: 0;
   display: flex;
   flex-direction: column;
 }
@@ -153,6 +154,7 @@ async function copyBody() {
 
 .sections {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 12px 16px;
   display: flex;
@@ -164,6 +166,7 @@ section {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
+  flex-shrink: 0;
   overflow: hidden;
 }
 

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:layout": "node scripts/verify-request-detail-layout.mjs"
   },
   "dependencies": {
     "vue": "^3.4.21",

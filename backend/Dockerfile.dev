@@ -1,0 +1,12 @@
+FROM golang:1.23-alpine
+
+WORKDIR /app
+
+RUN go install github.com/air-verse/air@latest
+
+COPY entrypoint.dev.sh /entrypoint.dev.sh
+RUN chmod +x /entrypoint.dev.sh
+
+EXPOSE 8080
+
+ENTRYPOINT ["/entrypoint.dev.sh"]

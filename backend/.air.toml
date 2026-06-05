@@ -1,0 +1,31 @@
+root = "."
+tmp_dir = "/tmp/air"
+
+[build]
+bin = "/tmp/air/requestbin"
+cmd = "go build -o /tmp/air/requestbin ."
+delay = 500
+exclude_dir = ["vendor", "frontend"]
+exclude_regex = ["_test\\.go$"]
+include_ext = ["go"]
+kill_delay = "200ms"
+log = ""
+rerun = false
+send_interrupt = true
+stop_on_error = true
+
+[color]
+app     = "green"
+build   = "yellow"
+main    = "magenta"
+runner  = "cyan"
+watcher = "blue"
+
+[log]
+time = true
+
+[misc]
+clean_on_exit = true
+
+[screen]
+clear_on_rebuild = true

@@ -4,7 +4,7 @@ Inspect and debug HTTP requests in real-time. Create a bin, send requests to its
 
 ## Stack
 
-- **Backend** — Go 1.23 + [Echo](https://echo.labstack.com/) + [pgx](https://github.com/jackc/pgx)
+- **Backend** — Go 1.26 + [Echo](https://echo.labstack.com/) + [pgx](https://github.com/jackc/pgx)
 - **Frontend** — Vue 3 (Composition API) + Vite + Vue Router
 - **Database** — PostgreSQL 16
 - **Realtime** — Server-Sent Events (SSE)
@@ -19,9 +19,9 @@ docker compose -f docker-compose.dev.yml up --build
 
 | Service  | URL                        |
 |----------|----------------------------|
-| Frontend | http://localhost:5173       |
-| Backend  | http://localhost:8080       |
-| Postgres | localhost:5432              |
+| Frontend | http://localhost:5172       |
+| Backend  | http://localhost:9090       |
+| Postgres | localhost:5433              |
 
 The backend uses [air](https://github.com/air-verse/air) — any `.go` file change triggers an automatic rebuild. The frontend uses Vite HMR.
 
@@ -43,13 +43,13 @@ The app is served at http://localhost on port 80. The frontend (nginx) proxies `
 
 ```bash
 # Any method, any path
-curl -X POST http://localhost:5173/r/<bin-id>/webhook \
+curl -X POST http://localhost:5172/r/<bin-id>/webhook \
   -H "Content-Type: application/json" \
   -d '{"event": "user.created", "id": 42}'
 
-curl "http://localhost:5173/r/<bin-id>/ping?foo=bar"
+curl "http://localhost:5172/r/<bin-id>/ping?foo=bar"
 
-curl -X PUT http://localhost:5173/r/<bin-id>/items/1 \
+curl -X PUT http://localhost:5172/r/<bin-id>/items/1 \
   -H "Content-Type: application/json" \
   -d '{"name": "updated"}'
 ```

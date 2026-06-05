@@ -1,4 +1,4 @@
-FROM golang:1.23-alpine
+FROM golang:1.26-alpine
 
 WORKDIR /app
 
@@ -7,6 +7,6 @@ RUN go install github.com/air-verse/air@latest
 COPY entrypoint.dev.sh /entrypoint.dev.sh
 RUN chmod +x /entrypoint.dev.sh
 
-EXPOSE 8080
+EXPOSE 9090
 
 ENTRYPOINT ["/entrypoint.dev.sh"]

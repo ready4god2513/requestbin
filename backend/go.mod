@@ -1,6 +1,6 @@
 module github.com/ready4god2513/requestbin
 
-go 1.23
+go 1.26
 
 require (
 	github.com/jackc/pgx/v5 v5.7.1
